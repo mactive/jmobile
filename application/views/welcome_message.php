@@ -1,4 +1,3 @@
-<?php echo  site_url() . "========"; ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -14,7 +13,6 @@
 	
 </head>
 <body>
-dddddd
 <div data-role="page">
 
 	<div data-role="header">

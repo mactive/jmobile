@@ -21,6 +21,40 @@ class Welcome extends CI_Controller {
 	{
 		$this->load->view('welcome_message');
 	}
+	
+	public function animation(){
+		$this->load->view('html5_animation');
+	}
+	
+	
+	public function linkage(){
+		$this->load->model("model_linkage");
+		$data['rand_years'] = $this->model_linkage->rand_years();
+		$this->load->view('linkage_jm',$data);
+	}
+	
+	public function gaussian_blur(){
+		$bg_path = "img/bg-race-terran-top";
+		echo $bg_path."<br />"; 
+		
+		$this->load->library('image_lib');
+		$config['image_library'] = 'GD2';
+		$config['source_image'] = $bg_path.".jpg";
+		$config['create_thumb'] = TRUE;
+		$config['maintain_ratio'] = TRUE;
+		$config['width'] = '500';
+		$config['height'] = '500';
+		
+		$this->image_lib->initialize($config);
+		
+		if(!$this->image_lib->resize())
+		{
+		   echo $this->image_lib->display_errors();
+		}else{
+			echo '<img src="'.base_url().$bg_path.'_thumb.jpg" />';
+		}
+		// echo '<img src="'.base_url().$bg_path.'.jpg" />';
+	}
 }
 
 /* End of file welcome.php */

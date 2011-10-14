@@ -14,7 +14,8 @@
 | path to your installation.
 |
 */
-$config['base_url']	= 'http://localhost/webapp/jmobile/';
+// $config['base_url']	= 'http://localhost/webapp/jmobile/';
+$config['base_url']	= 'http://192.168.11.111/webapp/jmobile/';
 
 /*
 |--------------------------------------------------------------------------
