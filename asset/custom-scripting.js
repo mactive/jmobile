@@ -15,7 +15,22 @@
  */
 
 $(document).bind("mobileinit", function(){
-  $.extend(  $.mobile , {
-    foo: bar
+	$.extend(  $.mobile , {
+		foo: bar
+	});	
+});
+
+
+$(document).ready(function() {
+  $('#box-left').bind('tap', function(event) {
+    alert('The mouse cursor is at ('
+      + event.pageX + ', ' + event.pageY + ')');
+  });
+  $('#box-left').bind('swipeleft', function(event) {
+    alert('left');
+  });
+  $('#box-left').bind('swiperight', function(event) {
+    alert('right');
   });
 });
+
